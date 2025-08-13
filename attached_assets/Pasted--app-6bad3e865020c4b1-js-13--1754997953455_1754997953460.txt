@@ -1,0 +1,77 @@
+_app-6bad3e865020c4b1.js:13 
+      /////////////////////
+   ///////////////////////////
+  ////////@@@@@@@//////////////
+  ////////@@@@@@@//////////////
+  ////////@@@@@@@//////////////        Curious and driven?
+  ///////////////@@@@@@@///////        Work with us!
+  ///////////////@@@@@@@///////
+  ///////////////@@@@@@@///////        https://join.replit.com/hack.with.us
+  ////////@@@@@@@//////////////
+  ////////@@@@@@@//////////////
+  ////////@@@@@@#//////////////
+   ///////////////////////////
+      /////////////////////
+      
+_app-6bad3e865020c4b1.js:13 [LaunchDarkly] LaunchDarkly client initialized
+recaptcha__en.js:96 [Intervention] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2
+recaptcha__en.js:96 [Intervention] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4.woff2
+1171-fe2998dce1a2d941.js:1 [Intervention] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://replit.com/public/fonts/replit-icons.woff
+analytics.tiktok.com/i18n/pixel/events.js?sdkid=D004GE3C77U8PIVDSDJG&lib=ttq:1  Failed to load resource: net::ERR_CONNECTION_TIMED_OUT
+ComplaintAssist:1 Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner.
+framework-3ea2b49328ab5055.js:1 Error while parsing the 'sandbox' attribute: 'allow-downloads-without-user-activation' is an invalid sandbox flag.
+_ @ framework-3ea2b49328ab5055.js:1
+framework-3ea2b49328ab5055.js:1 Unrecognized feature: 'ambient-light-sensor'.
+_ @ framework-3ea2b49328ab5055.js:1
+framework-3ea2b49328ab5055.js:1 Unrecognized feature: 'battery'.
+_ @ framework-3ea2b49328ab5055.js:1
+framework-3ea2b49328ab5055.js:1 Unrecognized feature: 'execution-while-not-rendered'.
+_ @ framework-3ea2b49328ab5055.js:1
+framework-3ea2b49328ab5055.js:1 Unrecognized feature: 'execution-while-out-of-viewport'.
+_ @ framework-3ea2b49328ab5055.js:1
+framework-3ea2b49328ab5055.js:1 Unrecognized feature: 'layout-animations'.
+_ @ framework-3ea2b49328ab5055.js:1
+framework-3ea2b49328ab5055.js:1 Unrecognized feature: 'legacy-image-formats'.
+_ @ framework-3ea2b49328ab5055.js:1
+framework-3ea2b49328ab5055.js:1 Unrecognized feature: 'navigation-override'.
+_ @ framework-3ea2b49328ab5055.js:1
+framework-3ea2b49328ab5055.js:1 Unrecognized feature: 'oversized-images'.
+_ @ framework-3ea2b49328ab5055.js:1
+framework-3ea2b49328ab5055.js:1 Unrecognized feature: 'publickey-credentials'.
+_ @ framework-3ea2b49328ab5055.js:1
+framework-3ea2b49328ab5055.js:1 Unrecognized feature: 'speaker-selection'.
+_ @ framework-3ea2b49328ab5055.js:1
+framework-3ea2b49328ab5055.js:1 Unrecognized feature: 'unoptimized-images'.
+_ @ framework-3ea2b49328ab5055.js:1
+framework-3ea2b49328ab5055.js:1 Unrecognized feature: 'unsized-media'.
+_ @ framework-3ea2b49328ab5055.js:1
+framework-3ea2b49328ab5055.js:1 Unrecognized feature: 'pointer-lock'.
+_ @ framework-3ea2b49328ab5055.js:1
+framework-3ea2b49328ab5055.js:1 Allow attribute will take precedence over 'allowfullscreen'.
+_ @ framework-3ea2b49328ab5055.js:1
+framework-3ea2b49328ab5055.js:1 Allow attribute will take precedence over 'allowpaymentrequest'.
+_ @ framework-3ea2b49328ab5055.js:1
+workspace_iframe.html?initialPath=%2F&id=%3Ar9n%3A:32 Error while parsing the 'sandbox' attribute: 'allow-downloads-without-user-activation' is an invalid sandbox flag.
+workspace_iframe.html?initialPath=%2F&id=%3Ar9n%3A:32 Unrecognized feature: 'ambient-light-sensor'.
+workspace_iframe.html?initialPath=%2F&id=%3Ar9n%3A:32 Unrecognized feature: 'battery'.
+workspace_iframe.html?initialPath=%2F&id=%3Ar9n%3A:32 Unrecognized feature: 'execution-while-not-rendered'.
+workspace_iframe.html?initialPath=%2F&id=%3Ar9n%3A:32 Unrecognized feature: 'execution-while-out-of-viewport'.
+workspace_iframe.html?initialPath=%2F&id=%3Ar9n%3A:32 Unrecognized feature: 'layout-animations'.
+workspace_iframe.html?initialPath=%2F&id=%3Ar9n%3A:32 Unrecognized feature: 'legacy-image-formats'.
+workspace_iframe.html?initialPath=%2F&id=%3Ar9n%3A:32 Unrecognized feature: 'navigation-override'.
+workspace_iframe.html?initialPath=%2F&id=%3Ar9n%3A:32 Unrecognized feature: 'oversized-images'.
+workspace_iframe.html?initialPath=%2F&id=%3Ar9n%3A:32 Unrecognized feature: 'publickey-credentials'.
+workspace_iframe.html?initialPath=%2F&id=%3Ar9n%3A:32 Unrecognized feature: 'speaker-selection'.
+workspace_iframe.html?initialPath=%2F&id=%3Ar9n%3A:32 Unrecognized feature: 'unoptimized-images'.
+workspace_iframe.html?initialPath=%2F&id=%3Ar9n%3A:32 Unrecognized feature: 'unsized-media'.
+workspace_iframe.html?initialPath=%2F&id=%3Ar9n%3A:32 Allow attribute will take precedence over 'allowfullscreen'.
+workspace_iframe.html?initialPath=%2F&id=%3Ar9n%3A:32 Allow attribute will take precedence over 'allowpaymentrequest'.
+Network.js:227 WebSocket connection to 'wss://75ab2c12-33fb-4555-b247-55155b72a564-00-3t712a0tjn2nf.janeway.replit.dev/?token=S2U1UVKu_XKz' failed: 
+t @ Network.js:227
+Network.js:227 Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'wss://localhost:undefined/?token=S2U1UVKu_XKz' is invalid.
+    at new t (Network.js:227:18)
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)
+ipfs.ts:11 Uncaught ReferenceError: process is not defined
+    at ipfs.ts:11:25

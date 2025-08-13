@@ -1,0 +1,59 @@
+> rest-express@1.0.0 dev
+> cross-env NODE_ENV=development tsx server/index.ts
+
+⚠️ No DATABASE_URL found, using mock database
+✅ Database connection established
+✅ IPFS service initialized
+✅ Blockchain service initialized
+✅ All routes registered successfully
+🔌 WebSocket server ready on /ws
+2:15:25 PM [express] 🚀 SpeakSecure server running on port 5000
+2:15:25 PM [express] 📡 API endpoints available at http://localhost:5000/api
+2:15:25 PM [express] 🔌 WebSocket server available at ws://localhost:5000/ws
+2:15:25 PM [express] 🔐 Zero-Knowledge Identity service: ACTIVE
+2:15:25 PM [express] 🔒 Encryption service: ACTIVE
+2:15:25 PM [express] 📁 IPFS storage service: FALLBACK
+2:15:25 PM [express] ⛓️  Blockchain service: FALLBACK
+2:15:25 PM [express] 🚨 Emergency service: ACTIVE
+2:15:25 PM [express] 🌐 Multi-language support: ACTIVE
+Error:   Failed to scan for dependencies from entries:
+  /home/runner/workspace/client/index.html
+
+  ✘ [ERROR] No matching export in "client/src/lib/queryClient.ts" for import "apiRequest"
+
+    client/src/pages/admin.tsx:11:9:
+      11 │ import { apiRequest } from "@/lib/queryClient";
+         ╵          ~~~~~~~~~~
+
+
+✘ [ERROR] No matching export in "client/src/lib/queryClient.ts" for import "apiRequest"
+
+    client/src/pages/ngo.tsx:12:9:
+      12 │ import { apiRequest } from "@/lib/queryClient";
+         ╵          ~~~~~~~~~~
+
+
+✘ [ERROR] No matching export in "client/src/lib/queryClient.ts" for import "apiRequest"
+
+    client/src/pages/public-feed.tsx:11:9:
+      11 │ import { apiRequest } from "@/lib/queryClient";
+         ╵          ~~~~~~~~~~
+
+
+✘ [ERROR] No matching export in "client/src/lib/blockchain.ts" for import "generateHash"
+
+    client/src/pages/report.tsx:20:9:
+      20 │ import { generateHash, logComplaintToBlockchain } from "@/lib/bloc...
+         ╵          ~~~~~~~~~~~~
+
+
+    at failureErrorWithLog (/home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:1472:15)
+    at /home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:945:25
+    at runOnEndCallbacks (/home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:1315:45)
+    at buildResponseToResult (/home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:943:7)
+    at /home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:955:9
+    at new Promise (<anonymous>)
+    at requestCallbacks.on-end (/home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:954:54)
+    at handleRequest (/home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:647:17)
+    at handleIncomingPacket (/home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:672:7)
+    at Socket.readFromStdout (/home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:600:7)

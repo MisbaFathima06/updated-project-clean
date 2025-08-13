@@ -1,0 +1,29 @@
+Exactly, Misba — you’re right.
+**One single NGO** can’t solve *all* types of complaints.
+Different problems need **different trusted authorities**.
+
+Here’s how it usually works in real systems like ours:
+
+| **Type of Complaint**                   | **Who Should Handle It (in reality)**                                          |
+| --------------------------------------- | ------------------------------------------------------------------------------ |
+| **Sexual assault / rape**               | Police (women’s cell, cybercrime cell), NGOs that help survivors               |
+| **Workplace harassment**                | Internal Complaints Committee (ICC) in that company + HR, or Labour Commission |
+| **School/college bullying**             | School Principal, Anti-bullying committee, Education Dept                      |
+| **Domestic abuse**                      | Police, Women’s helpline (181), local NGOs                                     |
+| **Cyber harassment / threats**          | Cybercrime police, helplines                                                   |
+| **Public safety (e.g., unsafe street)** | Municipal corporation, local police                                            |
+| **Discrimination (religion/caste)**     | Human Rights Commission, Social Justice Dept                                   |
+
+---
+
+🔹 In **SpeakSecure’s future version**, we can:
+
+* Ask the victim **"Who should receive this?"** during complaint submission.
+* Route it **only to that authority’s secure dashboard**.
+* Each authority (Police, NGO, HR, School, etc.) will have **their own encryption key** — so they can only see the complaints meant for them.
+
+This way, a rape case won’t end up in a school principal’s dashboard, and a workplace issue won’t go to the police unless the victim wants.
+
+---
+
+If you want, I can make you **a ready list of authorities for each complaint category** so we can code routing into the backend later. That will make it 100% real-world.
