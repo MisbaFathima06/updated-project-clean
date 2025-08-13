@@ -1,0 +1,34 @@
+client:536  WebSocket connection to 'wss://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/?token=EzVJtaeEXqHC' failed: Error during WebSocket handshake: Unexpected response code: 400
+setupWebSocket @ client:536
+client:536  Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'wss://localhost:undefined/?token=EzVJtaeEXqHC' is invalid.
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)
+react-dom.development.js:29895 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+dialog.tsx:542  Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+(anonymous) @ dialog.tsx:542
+api/emergency:1   Failed to load resource: the server responded with a status of 400 (Bad Request)
+emergency-modal.tsx:70  Emergency alert error: Error: Failed to send emergency alert
+    at handleSendAlert (emergency-modal.tsx:67:15)
+handleSendAlert @ emergency-modal.tsx:70
+use-zk-identity.ts:35 ✅ ZK Identity loaded from storage: 0xfb78a4...
+api/zk/generate-proof:1   Failed to load resource: the server responded with a status of 400 (Bad Request)
+use-zk-identity.ts:161  ZK proof generation failed: Error: API request failed: 400 Bad Request
+    at apiRequest (queryClient.ts:14:11)
+    at async use-zk-identity.ts:138:24
+    at async Object.mutationFn (report.tsx:80:23)
+(anonymous) @ use-zk-identity.ts:161
+api/zk/generate-proof:1   Failed to load resource: the server responded with a status of 400 (Bad Request)
+use-zk-identity.ts:161  ZK proof generation failed: Error: API request failed: 400 Bad Request
+    at apiRequest (queryClient.ts:14:11)
+    at async use-zk-identity.ts:138:24
+    at async Object.mutationFn (report.tsx:80:23)
+(anonymous) @ use-zk-identity.ts:161
+api/zk/generate-proof:1   Failed to load resource: the server responded with a status of 400 (Bad Request)
+use-zk-identity.ts:161  ZK proof generation failed: Error: API request failed: 400 Bad Request
+    at apiRequest (queryClient.ts:14:11)
+    at async use-zk-identity.ts:138:24
+    at async Object.mutationFn (report.tsx:80:23)
+(anonymous) @ use-zk-identity.ts:161
+use-zk-identity.ts:35 ✅ ZK Identity loaded from storage: 0xfb78a4...
+use-zk-identity.ts:35 ✅ ZK Identity loaded from storage: 0xfb78a4...
