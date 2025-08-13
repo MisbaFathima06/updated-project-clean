@@ -1,12 +1,12 @@
 import { Router } from 'express';
 import { z } from 'zod';
-import { emergencyService } from '../services/emergency';
-import { zkIdentityService } from '../services/zk-identity';
+import { emergencyService } from '../services/emergency.js';
+import { zkIdentityService } from '../services/zk-identity.js';
 
 const router = Router();
 
 // Send emergency alert
-router.post('/alert', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     console.log('🚨 Processing emergency alert...');
     
@@ -67,7 +67,7 @@ router.post('/alert', async (req, res) => {
     res.status(500).json({
       success: false,
       error: 'Failed to send emergency alert',
-      message: error.message
+      message: error instanceof Error ? error.message : 'Unknown error'
     });
   }
 });
@@ -96,7 +96,7 @@ router.post('/test', async (req, res) => {
     res.status(500).json({
       success: false,
       error: 'Emergency system test failed',
-      message: error.message
+      message: error instanceof Error ? error.message : 'Unknown error'
     });
   }
 });

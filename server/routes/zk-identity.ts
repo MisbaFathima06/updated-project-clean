@@ -72,7 +72,8 @@ router.post('/generate-proof', async (req, res) => {
       action: z.string().min(1),
       data: z.any().optional(),
       commitment: z.string().min(1),
-      nullifier: z.string().min(1)
+      nullifier: z.string().min(1),
+      groupId: z.string().default('speaksecure-v1')
     });
 
     const validationResult = proofSchema.safeParse(req.body);
