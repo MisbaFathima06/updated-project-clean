@@ -4,152 +4,108 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 // Translation resources
-const resources = {
+export const translations = {
   en: {
-    translation: {
-      // Navigation
-      nav: {
-        home: "Home",
-        report: "Report Issue",
-        status: "Track Status", 
-        publicFeed: "Public Feed",
-        ngo: "NGO Portal",
-        admin: "Admin Panel",
-        analytics: "Analytics"
-      },
+    // Navigation
+    'nav.home': "Home",
+    'nav.report': "Report Issue",
+    'nav.status': "Track Status",
+    'nav.community': "Community",
+    'nav.emergency': "Emergency",
 
-      // Homepage
-      home: {
-        title: "SpeakSecure",
-        subtitle: "Your voice matters. Report anonymously, stay protected.",
-        description: "A secure platform for reporting harassment, abuse, and safety concerns with complete anonymity and zero-knowledge proof technology.",
-        getStarted: "Get Started",
-        reportNow: "Report Issue",
-        learnMore: "Learn More",
-        features: {
-          anonymous: {
-            title: "100% Anonymous",
-            description: "Your identity is protected with zero-knowledge cryptography"
-          },
-          secure: {
-            title: "Military-Grade Security", 
-            description: "End-to-end encryption ensures your data stays private"
-          },
-          decentralized: {
-            title: "Decentralized Storage",
-            description: "Your reports are stored on IPFS for maximum security"
-          },
-          multilingual: {
-            title: "Multi-Language Support",
-            description: "Report in your preferred language"
-          }
-        }
-      },
+    // Common
+    'common.encrypted': "Encrypted",
+    'common.anonymous': "Anonymous",
+    'common.verified': "Verified",
 
-      // Report page
-      report: {
-        title: "Submit Anonymous Report",
-        subtitle: "Share your experience safely and anonymously",
-        category: {
-          label: "Category *",
-          placeholder: "Select category",
-          workplace: "Workplace Harassment",
-          domestic: "Domestic Violence", 
-          cyberbullying: "Cyberbullying",
-          discrimination: "Discrimination",
-          other: "Other"
-        },
-        location: {
-          label: "Location",
-          placeholder: "Enter location (optional)"
-        },
-        description: {
-          label: "Description *", 
-          placeholder: "Describe what happened..."
-        },
-        evidence: {
-          label: "Evidence",
-          upload: "Upload files (optional)",
-          voice: "Record Voice Note"
-        },
-        emergency: {
-          label: "Mark as Emergency",
-          description: "Check this if you need immediate help"
-        },
-        submit: "Submit Report",
-        submitting: "Submitting..."
-      },
+    // Homepage
+    'home.title': "SpeakSecure - Your Voice, Your Safety",
+    'home.subtitle': "Report anonymously, stay protected with zero-knowledge privacy.",
+    'home.report.title': "Report Issue",
+    'home.report.description': "Submit your complaint anonymously with complete privacy protection.",
+    'home.status.title': "Track Status",
+    'home.status.description': "Check the progress of your submitted reports safely.",
+    'home.community.title': "Help Others",
+    'home.community.description': "Support community members by viewing and upvoting public reports.",
 
-      // Emergency
-      emergency: {
-        title: "Emergency Alert",
-        description: "This will send an immediate alert to emergency services and trusted contacts.",
-        button: "Emergency Help"
-      },
+    // Report page
+    'report.title': "Submit Anonymous Report",
+    'report.subtitle': "Share your experience safely and anonymously",
+    'form.category': "Category",
+    'form.select_category': "Select category",
+    'categories.workplace': "Workplace Harassment",
+    'categories.domestic': "Domestic Violence",
+    'categories.cyberbullying': "Cyberbullying",
+    'categories.discrimination': "Discrimination",
+    'categories.other': "Other",
+    'form.location': "Location",
+    'form.description': "Description",
+    'form.evidence': "Evidence",
+    'form.emergency': "Mark as Emergency",
+    'form.submit': "Submit Report",
+    'form.submitting': "Submitting...",
 
-      // Status tracking
-      status: {
-        title: "Track Your Reports",
-        noReports: "No reports found",
-        id: "Report ID",
-        category: "Category", 
-        date: "Date",
-        status: "Status",
-        actions: "Actions"
-      },
+    // Emergency
+    'emergency.title': "Emergency Alert",
+    'emergency.description': "This will send an immediate alert to emergency services and trusted contacts.",
+    'emergency.button': "Emergency Help",
 
-      // Public feed
-      publicFeed: {
-        title: "Community Reports",
-        subtitle: "Anonymous reports from the community",
-        noReports: "No public reports available",
-        upvote: "Support",
-        comment: "Comment"
-      }
-    }
+    // Status tracking
+    'status.title': "Track Your Reports",
+    'status.noReports': "No reports found",
+    'status.id': "Report ID",
+    'status.category': "Category",
+    'status.date': "Date",
+    'status.status': "Status",
+    'status.actions': "Actions"
   },
   hi: {
-    translation: {
-      // Hindi translations
-      nav: {
-        home: "होम",
-        report: "शिकायत दर्ज करें", 
-        status: "स्थिति ट्रैक करें",
-        publicFeed: "सार्वजनिक फीड",
-        ngo: "एनजीओ पोर्टल",
-        admin: "एडमिन पैनल",
-        analytics: "एनालिटिक्स"
-      },
+    // Hindi translations
+    'nav.home': "होम",
+    'nav.report': "शिकायत दर्ज करें",
+    'nav.status': "स्थिति ट्रैक करें",
+    'nav.community': "समुदाय",
+    'nav.emergency': "आपातकाल",
 
-      home: {
-        title: "स्पीकसिक्योर",
-        subtitle: "आपकी आवाज मायने रखती है। गुमनाम रूप से रिपोर्ट करें, सुरक्षित रहें।",
-        description: "उत्पीड़न, दुर्व्यवहार और सुरक्षा चिंताओं की रिपोर्ट के लिए एक सुरक्षित प्लेटफॉर्म, पूर्ण गुमनामी और शून्य-ज्ञान प्रमाण तकनीक के साथ।",
-        getStarted: "शुरू करें",
-        reportNow: "शिकायत दर्ज करें", 
-        learnMore: "और जानें"
-      },
+    'home.title': "स्पीकसिक्योर - आपकी आवाज़, आपकी सुरक्षा",
+    'home.subtitle': "गुमनाम रूप से रिपोर्ट करें, शून्य-ज्ञान गोपनीयता के साथ सुरक्षित रहें।",
+    'home.report.title': "शिकायत दर्ज करें",
+    'home.report.description': "पूर्ण गोपनीयता सुरक्षा के साथ अपनी शिकायत गुमनाम रूप से दर्ज करें।",
+    'home.status.title': "स्थिति ट्रैक करें",
+    'home.status.description': "अपनी दर्ज की गई रिपोर्टों की प्रगति सुरक्षित रूप से जांचें।",
+    'home.community.title': "दूसरों की मदद करें",
+    'home.community.description': "सार्वजनिक रिपोर्ट देखकर और अपवोट करके समुदाय के सदस्यों का समर्थन करें।",
 
-      report: {
-        title: "गुमनाम रिपोर्ट जमा करें",
-        subtitle: "अपना अनुभव सुरक्षित और गुमनाम रूप से साझा करें",
-        category: {
-          label: "श्रेणी *",
-          placeholder: "श्रेणी चुनें"
-        },
-        description: {
-          label: "विवरण *",
-          placeholder: "क्या हुआ था, बताएं..."
-        },
-        submit: "रिपोर्ट जमा करें"
-      },
+    'report.title': "गुमनाम रिपोर्ट जमा करें",
+    'report.subtitle': "अपना अनुभव सुरक्षित और गुमनाम रूप से साझा करें",
+    'form.category': "श्रेणी",
+    'form.description': "विवरण",
+    'form.submit': "रिपोर्ट जमा करें",
 
-      emergency: {
-        title: "आपातकालीन अलर्ट", 
-        description: "यह आपातकालीन सेवाओं और विश्वसनीय संपर्कों को तत्काल अलर्ट भेजेगा।",
-        button: "आपातकालीन सहायता"
-      }
-    }
+    'emergency.title': "आपातकालीन अलर्ट",
+    'emergency.description': "यह आपातकालीन सेवाओं और विश्वसनीय संपर्कों को तत्काल अलर्ट भेजेगा।",
+    'emergency.button': "आपातकालीन सहायता"
+  },
+  ta: {
+    'nav.home': "முகப்பு",
+    'nav.report': "புகார் பதிவு செய்யுங்கள்",
+    'nav.status': "நிலையை கண்காணிக்கவும்",
+    'nav.community': "சமூகம்",
+    'nav.emergency': "அவசரநிலை"
+  },
+  kn: {
+    'nav.home': "ಮುಖ್ಯಪುಟ",
+    'nav.report': "ದೂರು ದಾಖಲಿಸಿ",
+    'nav.status': "ಸ್ಥಿತಿ ಟ್ರ್ಯಾಕ್ ಮಾಡಿ",
+    'nav.community': "ಸಮುದಾಯ",
+    'nav.emergency': "ತುರ್ತುಸ್ಥಿತಿ"
+  },
+  ur: {
+    'nav.home': "ہوم",
+    'nav.report': "شکایت درج کریں",
+    'nav.status': "اسٹیٹس ٹریک کریں",
+    'nav.community': "کمیونٹی",
+    'nav.emergency': "ایمرجنسی"
   }
 };
 
@@ -157,14 +113,30 @@ const resources = {
 i18n
   .use(initReactI18next)
   .init({
-    resources,
+    resources: Object.keys(translations).reduce((acc, lang) => {
+      acc[lang] = { translation: translations[lang] };
+      return acc;
+    }, {} as any),
     lng: 'en',
     fallbackLng: 'en',
     debug: false,
-
     interpolation: {
       escapeValue: false
     }
   });
+
+// Export translation function
+export const t = (key: string): string => {
+  return i18n.t(key);
+};
+
+// Export language functions
+export const getCurrentLanguage = (): string => {
+  return i18n.language;
+};
+
+export const setLanguage = (lang: string): void => {
+  i18n.changeLanguage(lang);
+};
 
 export default i18n;
