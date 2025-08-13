@@ -3,140 +3,113 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-// Translation resources
-export const translations = {
+const resources = {
   en: {
-    // Navigation
-    'nav.home': "Home",
-    'nav.report': "Report Issue",
-    'nav.status': "Track Status",
-    'nav.community': "Community",
-    'nav.emergency': "Emergency",
-
-    // Common
-    'common.encrypted': "Encrypted",
-    'common.anonymous': "Anonymous",
-    'common.verified': "Verified",
-
-    // Homepage
-    'home.title': "SpeakSecure - Your Voice, Your Safety",
-    'home.subtitle': "Report anonymously, stay protected with zero-knowledge privacy.",
-    'home.report.title': "Report Issue",
-    'home.report.description': "Submit your complaint anonymously with complete privacy protection.",
-    'home.status.title': "Track Status",
-    'home.status.description': "Check the progress of your submitted reports safely.",
-    'home.community.title': "Help Others",
-    'home.community.description': "Support community members by viewing and upvoting public reports.",
-
-    // Report page
-    'report.title': "Submit Anonymous Report",
-    'report.subtitle': "Share your experience safely and anonymously",
-    'form.category': "Category",
-    'form.select_category': "Select category",
-    'categories.workplace': "Workplace Harassment",
-    'categories.domestic': "Domestic Violence",
-    'categories.cyberbullying': "Cyberbullying",
-    'categories.discrimination': "Discrimination",
-    'categories.other': "Other",
-    'form.location': "Location",
-    'form.description': "Description",
-    'form.evidence': "Evidence",
-    'form.emergency': "Mark as Emergency",
-    'form.submit': "Submit Report",
-    'form.submitting': "Submitting...",
-
-    // Emergency
-    'emergency.title': "Emergency Alert",
-    'emergency.description': "This will send an immediate alert to emergency services and trusted contacts.",
-    'emergency.button': "Emergency Help",
-
-    // Status tracking
-    'status.title': "Track Your Reports",
-    'status.noReports': "No reports found",
-    'status.id': "Report ID",
-    'status.category': "Category",
-    'status.date': "Date",
-    'status.status': "Status",
-    'status.actions': "Actions"
+    translation: {
+      "header.title": "SpeakSecure",
+      "header.report": "Report",
+      "header.public_feed": "Public Feed",
+      "header.status": "Status",
+      "header.admin": "Admin",
+      "header.ngo": "NGO",
+      "header.analytics": "Analytics",
+      "header.emergency": "Emergency",
+      "language.english": "English",
+      "language.hindi": "Hindi",
+      "language.urdu": "Urdu",
+      "language.bengali": "Bengali",
+      "emergency.title": "Emergency Alert",
+      "emergency.description": "This will immediately notify authorities",
+      "emergency.confirm": "Confirm Emergency",
+      "emergency.cancel": "Cancel"
+    }
   },
   hi: {
-    // Hindi translations
-    'nav.home': "होम",
-    'nav.report': "शिकायत दर्ज करें",
-    'nav.status': "स्थिति ट्रैक करें",
-    'nav.community': "समुदाय",
-    'nav.emergency': "आपातकाल",
-
-    'home.title': "स्पीकसिक्योर - आपकी आवाज़, आपकी सुरक्षा",
-    'home.subtitle': "गुमनाम रूप से रिपोर्ट करें, शून्य-ज्ञान गोपनीयता के साथ सुरक्षित रहें।",
-    'home.report.title': "शिकायत दर्ज करें",
-    'home.report.description': "पूर्ण गोपनीयता सुरक्षा के साथ अपनी शिकायत गुमनाम रूप से दर्ज करें।",
-    'home.status.title': "स्थिति ट्रैक करें",
-    'home.status.description': "अपनी दर्ज की गई रिपोर्टों की प्रगति सुरक्षित रूप से जांचें।",
-    'home.community.title': "दूसरों की मदद करें",
-    'home.community.description': "सार्वजनिक रिपोर्ट देखकर और अपवोट करके समुदाय के सदस्यों का समर्थन करें।",
-
-    'report.title': "गुमनाम रिपोर्ट जमा करें",
-    'report.subtitle': "अपना अनुभव सुरक्षित और गुमनाम रूप से साझा करें",
-    'form.category': "श्रेणी",
-    'form.description': "विवरण",
-    'form.submit': "रिपोर्ट जमा करें",
-
-    'emergency.title': "आपातकालीन अलर्ट",
-    'emergency.description': "यह आपातकालीन सेवाओं और विश्वसनीय संपर्कों को तत्काल अलर्ट भेजेगा।",
-    'emergency.button': "आपातकालीन सहायता"
-  },
-  ta: {
-    'nav.home': "முகப்பு",
-    'nav.report': "புகார் பதிவு செய்யுங்கள்",
-    'nav.status': "நிலையை கண்காணிக்கவும்",
-    'nav.community': "சமூகம்",
-    'nav.emergency': "அவசரநிலை"
-  },
-  kn: {
-    'nav.home': "ಮುಖ್ಯಪುಟ",
-    'nav.report': "ದೂರು ದಾಖಲಿಸಿ",
-    'nav.status': "ಸ್ಥಿತಿ ಟ್ರ್ಯಾಕ್ ಮಾಡಿ",
-    'nav.community': "ಸಮುದಾಯ",
-    'nav.emergency': "ತುರ್ತುಸ್ಥಿತಿ"
+    translation: {
+      "header.title": "स्पीकसिक्योर",
+      "header.report": "रिपोर्ट",
+      "header.public_feed": "सार्वजनिक फ़ीड",
+      "header.status": "स्थिति",
+      "header.admin": "व्यवस्थापक",
+      "header.ngo": "एनजीओ",
+      "header.analytics": "विश्लेषण",
+      "header.emergency": "आपातकाल",
+      "language.english": "अंग्रेजी",
+      "language.hindi": "हिंदी",
+      "language.urdu": "उर्दू",
+      "language.bengali": "बंगाली",
+      "emergency.title": "आपातकालीन अलर्ट",
+      "emergency.description": "यह तुरंत अधिकारियों को सूचित करेगा",
+      "emergency.confirm": "आपातकाल की पुष्टि करें",
+      "emergency.cancel": "रद्द करें"
+    }
   },
   ur: {
-    'nav.home': "ہوم",
-    'nav.report': "شکایت درج کریں",
-    'nav.status': "اسٹیٹس ٹریک کریں",
-    'nav.community': "کمیونٹی",
-    'nav.emergency': "ایمرجنسی"
+    translation: {
+      "header.title": "اسپیک سیکیور",
+      "header.report": "رپورٹ",
+      "header.public_feed": "پبلک فیڈ",
+      "header.status": "اسٹیٹس",
+      "header.admin": "ایڈمن",
+      "header.ngo": "این جی او",
+      "header.analytics": "تجزیات",
+      "header.emergency": "ایمرجنسی",
+      "language.english": "انگریزی",
+      "language.hindi": "ہندی",
+      "language.urdu": "اردو",
+      "language.bengali": "بنگالی",
+      "emergency.title": "ایمرجنسی الرٹ",
+      "emergency.description": "یہ فوری طور پر حکام کو مطلع کرے گا",
+      "emergency.confirm": "ایمرجنسی کی تصدیق",
+      "emergency.cancel": "منسوخ"
+    }
+  },
+  bn: {
+    translation: {
+      "header.title": "স্পিকসিকিউর",
+      "header.report": "রিপোর্ট",
+      "header.public_feed": "পাবলিক ফিড",
+      "header.status": "স্ট্যাটাস",
+      "header.admin": "অ্যাডমিন",
+      "header.ngo": "এনজিও",
+      "header.analytics": "অ্যানালিটিক্স",
+      "header.emergency": "জরুরী",
+      "language.english": "ইংরেজি",
+      "language.hindi": "হিন্দি",
+      "language.urdu": "উর্দু",
+      "language.bengali": "বাংলা",
+      "emergency.title": "জরুরী সতর্কতা",
+      "emergency.description": "এটি অবিলম্বে কর্তৃপক্ষকে অবহিত করবে",
+      "emergency.confirm": "জরুরী অবস্থা নিশ্চিত করুন",
+      "emergency.cancel": "বাতিল"
+    }
   }
 };
 
-// Initialize i18next
 i18n
   .use(initReactI18next)
   .init({
-    resources: Object.keys(translations).reduce((acc, lang) => {
-      acc[lang] = { translation: translations[lang] };
-      return acc;
-    }, {} as any),
+    resources,
     lng: 'en',
     fallbackLng: 'en',
-    debug: false,
     interpolation: {
-      escapeValue: false
-    }
+      escapeValue: false,
+    },
   });
 
-// Export translation function
-export const t = (key: string): string => {
-  return i18n.t(key);
+export const t = (key: string) => i18n.t(key);
+
+export const getCurrentLanguage = () => i18n.language;
+
+export const setLanguage = (lng: string) => {
+  i18n.changeLanguage(lng);
+  localStorage.setItem('language', lng);
 };
 
-// Export language functions
-export const getCurrentLanguage = (): string => {
-  return i18n.language;
-};
-
-export const setLanguage = (lang: string): void => {
-  i18n.changeLanguage(lang);
-};
+// Load saved language
+const savedLanguage = localStorage.getItem('language');
+if (savedLanguage) {
+  i18n.changeLanguage(savedLanguage);
+}
 
 export default i18n;

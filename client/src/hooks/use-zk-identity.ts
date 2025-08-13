@@ -156,7 +156,7 @@ export function useZkIdentity() {
         throw new Error('Identity is unexpectedly null after generation/registration attempt.');
       }
 
-      const response = await apiRequest('/api/zk/generate-proof', {
+      const response = await apiRequest('/zk/generate-proof', {
         method: 'POST',
         body: JSON.stringify({
           action,
