@@ -117,10 +117,11 @@ export class DatabaseStorage implements IStorage {
 
   async getZkIdentityByCommitment(commitment: string): Promise<ZkIdentity | undefined> {
     try {
-      const [identity] = await db
+      const identities = await db
         .select()
         .from(zkIdentities)
         .where(eq(zkIdentities.commitment, commitment));
+      const identity = identities[0];
       return identity || undefined;
     } catch (error) {
       console.warn('Database operation failed, using mock data:', error);
@@ -130,10 +131,11 @@ export class DatabaseStorage implements IStorage {
 
   async getZkIdentityByNullifier(nullifierHash: string): Promise<ZkIdentity | undefined> {
     try {
-      const [identity] = await db
+      const identities = await db
         .select()
         .from(zkIdentities)
         .where(eq(zkIdentities.nullifierHash, nullifierHash));
+      const identity = identities[0];
       return identity || undefined;
     } catch (error) {
       console.warn('Database operation failed, using mock data:', error);

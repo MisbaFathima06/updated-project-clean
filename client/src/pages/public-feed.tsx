@@ -25,7 +25,7 @@ interface PublicComplaint {
 }
 
 const categoryFilters = [
-  { value: "", label: "All Categories" },
+  { value: "all", label: "All Categories" },
   { value: "harassment", label: "Harassment" },
   { value: "discrimination", label: "Discrimination" },
   { value: "safety", label: "Public Safety" },
@@ -35,7 +35,7 @@ const categoryFilters = [
 ];
 
 const statusFilters = [
-  { value: "", label: "All Status" },
+  { value: "all", label: "All Status" },
   { value: "pending", label: "Pending" },
   { value: "review", label: "Under Review" },
   { value: "progress", label: "In Progress" },
@@ -90,11 +90,14 @@ export default function PublicFeedPage() {
       // Generate ZK proof for upvoting
       const zkProof = await generateProofForAction("upvote", complaintId);
 
-      const response = await apiRequest("POST", `/api/complaints/${complaintId}/upvote`, {
-        nullifierHash: zkProof.nullifierHash,
+      const response = await apiRequest(`/complaints/${complaintId}/upvote`, {
+        method: "POST",
+        body: JSON.stringify({
+          nullifierHash: zkProof.nullifierHash,
+        }),
       });
 
-      return await response.json();
+      return response;
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/complaints'] });
@@ -297,7 +300,7 @@ export default function PublicFeedPage() {
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-green-600 dark:text-green-400">
-                    {complaints.filter(c => c.status === 'resolved').length}
+                    {complaints.filter((c: any) => c.status === 'resolved').length}
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-300">
                     Resolved
@@ -305,7 +308,7 @@ export default function PublicFeedPage() {
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
-                    {complaints.reduce((sum, c) => sum + c.upvotes, 0)}
+                    {complaints.reduce((sum: number, c: any) => sum + c.upvotes, 0)}
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-300">
                     Total Upvotes
@@ -313,7 +316,7 @@ export default function PublicFeedPage() {
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
-                    {complaints.filter(c => c.priority === 'urgent').length}
+                    {complaints.filter((c: any) => c.priority === 'urgent').length}
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-300">
                     Urgent Cases

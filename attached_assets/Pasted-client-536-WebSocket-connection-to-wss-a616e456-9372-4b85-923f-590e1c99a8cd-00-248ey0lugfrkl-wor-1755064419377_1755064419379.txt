@@ -1,0 +1,373 @@
+client:536  WebSocket connection to 'wss://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/?token=xjojxOz5l9kA' failed: Error during WebSocket handshake: Unexpected response code: 400
+setupWebSocket @ client:536
+(anonymous) @ client:531
+client:536  Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'wss://localhost:undefined/?token=xjojxOz5l9kA' is invalid.
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)
+setupWebSocket @ client:536
+fallback @ client:509
+(anonymous) @ client:555
+react-dom.development.js:29895 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+use-zk-identity.ts:72 🔐 Generating Zero-Knowledge Identity...
+use-zk-identity.ts:120  ZK identity generation failed: TypeError: response.json is not a function
+    at use-zk-identity.ts:92:35
+    at async Object.mutationFn (report.tsx:76:9)
+(anonymous) @ use-zk-identity.ts:120
+await in (anonymous)
+mutationFn @ report.tsx:76
+fn @ mutation.ts:170
+run @ retryer.ts:153
+start @ retryer.ts:218
+execute @ mutation.ts:208
+await in execute
+mutate @ mutationObserver.ts:125
+(anonymous) @ useMutation.ts:52
+(anonymous) @ report.tsx:285
+(anonymous) @ createFormControl.ts:1247
+await in (anonymous)
+callCallback2 @ react-dom.development.js:4164
+invokeGuardedCallbackDev @ react-dom.development.js:4213
+invokeGuardedCallback @ react-dom.development.js:4277
+invokeGuardedCallbackAndCatchFirstError @ react-dom.development.js:4291
+executeDispatch @ react-dom.development.js:9041
+processDispatchQueueItemsInOrder @ react-dom.development.js:9073
+processDispatchQueue @ react-dom.development.js:9086
+dispatchEventsForPlugins @ react-dom.development.js:9097
+(anonymous) @ react-dom.development.js:9288
+batchedUpdates$1 @ react-dom.development.js:26179
+batchedUpdates @ react-dom.development.js:3991
+dispatchEventForPluginEventSystem @ react-dom.development.js:9287
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ react-dom.development.js:6465
+dispatchEvent @ react-dom.development.js:6457
+dispatchDiscreteEvent @ react-dom.development.js:6430
+use-zk-identity.ts:72 🔐 Generating Zero-Knowledge Identity...
+use-zk-identity.ts:120  ZK identity generation failed: TypeError: response.json is not a function
+    at use-zk-identity.ts:92:35
+    at async Object.mutationFn (report.tsx:76:9)
+(anonymous) @ use-zk-identity.ts:120
+await in (anonymous)
+mutationFn @ report.tsx:76
+fn @ mutation.ts:170
+run @ retryer.ts:153
+(anonymous) @ retryer.ts:199
+Promise.then
+(anonymous) @ retryer.ts:195
+Promise.catch
+run @ retryer.ts:160
+start @ retryer.ts:218
+execute @ mutation.ts:208
+await in execute
+mutate @ mutationObserver.ts:125
+(anonymous) @ useMutation.ts:52
+(anonymous) @ report.tsx:285
+(anonymous) @ createFormControl.ts:1247
+await in (anonymous)
+callCallback2 @ react-dom.development.js:4164
+invokeGuardedCallbackDev @ react-dom.development.js:4213
+invokeGuardedCallback @ react-dom.development.js:4277
+invokeGuardedCallbackAndCatchFirstError @ react-dom.development.js:4291
+executeDispatch @ react-dom.development.js:9041
+processDispatchQueueItemsInOrder @ react-dom.development.js:9073
+processDispatchQueue @ react-dom.development.js:9086
+dispatchEventsForPlugins @ react-dom.development.js:9097
+(anonymous) @ react-dom.development.js:9288
+batchedUpdates$1 @ react-dom.development.js:26179
+batchedUpdates @ react-dom.development.js:3991
+dispatchEventForPluginEventSystem @ react-dom.development.js:9287
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ react-dom.development.js:6465
+dispatchEvent @ react-dom.development.js:6457
+dispatchDiscreteEvent @ react-dom.development.js:6430
+use-zk-identity.ts:72 🔐 Generating Zero-Knowledge Identity...
+use-zk-identity.ts:120  ZK identity generation failed: TypeError: response.json is not a function
+    at use-zk-identity.ts:92:35
+    at async Object.mutationFn (report.tsx:76:9)
+(anonymous) @ use-zk-identity.ts:120
+await in (anonymous)
+mutationFn @ report.tsx:76
+fn @ mutation.ts:170
+run @ retryer.ts:153
+(anonymous) @ retryer.ts:199
+Promise.then
+(anonymous) @ retryer.ts:195
+Promise.catch
+run @ retryer.ts:160
+(anonymous) @ retryer.ts:199
+Promise.then
+(anonymous) @ retryer.ts:195
+Promise.catch
+run @ retryer.ts:160
+start @ retryer.ts:218
+execute @ mutation.ts:208
+await in execute
+mutate @ mutationObserver.ts:125
+(anonymous) @ useMutation.ts:52
+(anonymous) @ report.tsx:285
+(anonymous) @ createFormControl.ts:1247
+await in (anonymous)
+callCallback2 @ react-dom.development.js:4164
+invokeGuardedCallbackDev @ react-dom.development.js:4213
+invokeGuardedCallback @ react-dom.development.js:4277
+invokeGuardedCallbackAndCatchFirstError @ react-dom.development.js:4291
+executeDispatch @ react-dom.development.js:9041
+processDispatchQueueItemsInOrder @ react-dom.development.js:9073
+processDispatchQueue @ react-dom.development.js:9086
+dispatchEventsForPlugins @ react-dom.development.js:9097
+(anonymous) @ react-dom.development.js:9288
+batchedUpdates$1 @ react-dom.development.js:26179
+batchedUpdates @ react-dom.development.js:3991
+dispatchEventForPluginEventSystem @ react-dom.development.js:9287
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ react-dom.development.js:6465
+dispatchEvent @ react-dom.development.js:6457
+dispatchDiscreteEvent @ react-dom.development.js:6430
+select.tsx:1241  Uncaught Error: A <Select.Item /> must have a value prop that is not an empty string. This is because the Select value can be set to an empty string to clear the selection and show the placeholder.
+    at select.tsx:1241:13
+    at renderWithHooks (react-dom.development.js:15486:18)
+    at updateForwardRef (react-dom.development.js:19245:20)
+    at beginWork (react-dom.development.js:21675:16)
+    at HTMLUnknownElement.callCallback2 (react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (react-dom.development.js:4213:16)
+    at invokeGuardedCallback (react-dom.development.js:4277:31)
+    at beginWork$1 (react-dom.development.js:27490:7)
+    at performUnitOfWork (react-dom.development.js:26596:12)
+    at workLoopSync (react-dom.development.js:26505:5)
+(anonymous) @ select.tsx:1241
+renderWithHooks @ react-dom.development.js:15486
+updateForwardRef @ react-dom.development.js:19245
+beginWork @ react-dom.development.js:21675
+callCallback2 @ react-dom.development.js:4164
+invokeGuardedCallbackDev @ react-dom.development.js:4213
+invokeGuardedCallback @ react-dom.development.js:4277
+beginWork$1 @ react-dom.development.js:27490
+performUnitOfWork @ react-dom.development.js:26596
+workLoopSync @ react-dom.development.js:26505
+renderRootSync @ react-dom.development.js:26473
+performSyncWorkOnRoot @ react-dom.development.js:26124
+flushSyncCallbacks @ react-dom.development.js:12042
+(anonymous) @ react-dom.development.js:25690
+select.tsx:1241  Uncaught Error: A <Select.Item /> must have a value prop that is not an empty string. This is because the Select value can be set to an empty string to clear the selection and show the placeholder.
+    at select.tsx:1241:13
+    at renderWithHooks (react-dom.development.js:15486:18)
+    at updateForwardRef (react-dom.development.js:19245:20)
+    at beginWork (react-dom.development.js:21675:16)
+    at HTMLUnknownElement.callCallback2 (react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (react-dom.development.js:4213:16)
+    at invokeGuardedCallback (react-dom.development.js:4277:31)
+    at beginWork$1 (react-dom.development.js:27490:7)
+    at performUnitOfWork (react-dom.development.js:26596:12)
+    at workLoopSync (react-dom.development.js:26505:5)
+(anonymous) @ select.tsx:1241
+renderWithHooks @ react-dom.development.js:15486
+updateForwardRef @ react-dom.development.js:19245
+beginWork @ react-dom.development.js:21675
+callCallback2 @ react-dom.development.js:4164
+invokeGuardedCallbackDev @ react-dom.development.js:4213
+invokeGuardedCallback @ react-dom.development.js:4277
+beginWork$1 @ react-dom.development.js:27490
+performUnitOfWork @ react-dom.development.js:26596
+workLoopSync @ react-dom.development.js:26505
+renderRootSync @ react-dom.development.js:26473
+performSyncWorkOnRoot @ react-dom.development.js:26124
+flushSyncCallbacks @ react-dom.development.js:12042
+(anonymous) @ react-dom.development.js:25690
+select.tsx:1241  Uncaught Error: A <Select.Item /> must have a value prop that is not an empty string. This is because the Select value can be set to an empty string to clear the selection and show the placeholder.
+    at select.tsx:1241:13
+    at renderWithHooks (react-dom.development.js:15486:18)
+    at updateForwardRef (react-dom.development.js:19245:20)
+    at beginWork (react-dom.development.js:21675:16)
+    at HTMLUnknownElement.callCallback2 (react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (react-dom.development.js:4213:16)
+    at invokeGuardedCallback (react-dom.development.js:4277:31)
+    at beginWork$1 (react-dom.development.js:27490:7)
+    at performUnitOfWork (react-dom.development.js:26596:12)
+    at workLoopSync (react-dom.development.js:26505:5)
+(anonymous) @ select.tsx:1241
+renderWithHooks @ react-dom.development.js:15486
+updateForwardRef @ react-dom.development.js:19245
+beginWork @ react-dom.development.js:21675
+callCallback2 @ react-dom.development.js:4164
+invokeGuardedCallbackDev @ react-dom.development.js:4213
+invokeGuardedCallback @ react-dom.development.js:4277
+beginWork$1 @ react-dom.development.js:27490
+performUnitOfWork @ react-dom.development.js:26596
+workLoopSync @ react-dom.development.js:26505
+renderRootSync @ react-dom.development.js:26473
+recoverFromConcurrentError @ react-dom.development.js:25889
+performSyncWorkOnRoot @ react-dom.development.js:26135
+flushSyncCallbacks @ react-dom.development.js:12042
+(anonymous) @ react-dom.development.js:25690
+select.tsx:1241  Uncaught Error: A <Select.Item /> must have a value prop that is not an empty string. This is because the Select value can be set to an empty string to clear the selection and show the placeholder.
+    at select.tsx:1241:13
+    at renderWithHooks (react-dom.development.js:15486:18)
+    at updateForwardRef (react-dom.development.js:19245:20)
+    at beginWork (react-dom.development.js:21675:16)
+    at HTMLUnknownElement.callCallback2 (react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (react-dom.development.js:4213:16)
+    at invokeGuardedCallback (react-dom.development.js:4277:31)
+    at beginWork$1 (react-dom.development.js:27490:7)
+    at performUnitOfWork (react-dom.development.js:26596:12)
+    at workLoopSync (react-dom.development.js:26505:5)
+(anonymous) @ select.tsx:1241
+renderWithHooks @ react-dom.development.js:15486
+updateForwardRef @ react-dom.development.js:19245
+beginWork @ react-dom.development.js:21675
+callCallback2 @ react-dom.development.js:4164
+invokeGuardedCallbackDev @ react-dom.development.js:4213
+invokeGuardedCallback @ react-dom.development.js:4277
+beginWork$1 @ react-dom.development.js:27490
+performUnitOfWork @ react-dom.development.js:26596
+workLoopSync @ react-dom.development.js:26505
+renderRootSync @ react-dom.development.js:26473
+recoverFromConcurrentError @ react-dom.development.js:25889
+performSyncWorkOnRoot @ react-dom.development.js:26135
+flushSyncCallbacks @ react-dom.development.js:12042
+(anonymous) @ react-dom.development.js:25690
+react-dom.development.js:18704  The above error occurred in the <SelectItem> component:
+
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-select.js?v=04e7b679:850:7
+    at _c11 (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/src/components/ui/select.tsx:196:13)
+    at div
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-53MOX5ZU.js?v=04e7b679:42:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-O5O64FXO.js?v=04e7b679:79:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-O5O64FXO.js?v=04e7b679:56:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-LRJ6WIKL.js?v=04e7b679:39:15
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-select.js?v=04e7b679:761:13
+    at div
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-O5O64FXO.js?v=04e7b679:79:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-O5O64FXO.js?v=04e7b679:56:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-LRJ6WIKL.js?v=04e7b679:39:15
+    at Provider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-SMK2KVIP.js?v=04e7b679:38:15)
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-select.js?v=04e7b679:304:58
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-O5O64FXO.js?v=04e7b679:79:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-O5O64FXO.js?v=04e7b679:56:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-53MOX5ZU.js?v=04e7b679:42:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-GYXSYF2D.js?v=04e7b679:258:22
+    at SelectPortal
+    at _c7 (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/src/components/ui/select.tsx:117:12)
+    at Provider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-SMK2KVIP.js?v=04e7b679:38:15)
+    at Provider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-SMK2KVIP.js?v=04e7b679:38:15)
+    at CollectionProvider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-LRJ6WIKL.js?v=04e7b679:29:13)
+    at Provider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-SMK2KVIP.js?v=04e7b679:38:15)
+    at Provider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-SMK2KVIP.js?v=04e7b679:38:15)
+    at Popper (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-MELR42GN.js?v=04e7b679:1919:11)
+    at Select (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-select.js?v=04e7b679:92:5)
+    at div
+    at div
+    at div
+    at _c9 (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/src/components/ui/card.tsx:106:12)
+    at div
+    at _c (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/src/components/ui/card.tsx:20:11)
+    at div
+    at div
+    at PublicFeedPage (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/src/pages/public-feed.tsx:51:21)
+    at Route (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=04e7b679:323:16)
+    at Switch (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=04e7b679:379:17)
+    at div
+    at Router
+    at Provider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-SMK2KVIP.js?v=04e7b679:38:15)
+    at TooltipProvider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=04e7b679:59:5)
+    at ThemeProvider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/src/components/theme-provider.tsx:25:3)
+    at QueryClientProvider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=04e7b679:2805:3)
+    at App
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+logCapturedError @ react-dom.development.js:18704
+update.callback @ react-dom.development.js:18737
+callCallback @ react-dom.development.js:15036
+commitUpdateQueue @ react-dom.development.js:15057
+commitLayoutEffectOnFiber @ react-dom.development.js:23430
+commitLayoutMountEffects_complete @ react-dom.development.js:24727
+commitLayoutEffects_begin @ react-dom.development.js:24713
+commitLayoutEffects @ react-dom.development.js:24651
+commitRootImpl @ react-dom.development.js:26862
+commitRoot @ react-dom.development.js:26721
+performSyncWorkOnRoot @ react-dom.development.js:26156
+flushSyncCallbacks @ react-dom.development.js:12042
+(anonymous) @ react-dom.development.js:25690
+react-dom.development.js:18704  The above error occurred in the <SelectItem> component:
+
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-select.js?v=04e7b679:850:7
+    at _c11 (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/src/components/ui/select.tsx:196:13)
+    at div
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-53MOX5ZU.js?v=04e7b679:42:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-O5O64FXO.js?v=04e7b679:79:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-O5O64FXO.js?v=04e7b679:56:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-LRJ6WIKL.js?v=04e7b679:39:15
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-select.js?v=04e7b679:761:13
+    at div
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-O5O64FXO.js?v=04e7b679:79:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-O5O64FXO.js?v=04e7b679:56:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-LRJ6WIKL.js?v=04e7b679:39:15
+    at Provider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-SMK2KVIP.js?v=04e7b679:38:15)
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-select.js?v=04e7b679:304:58
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-O5O64FXO.js?v=04e7b679:79:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-O5O64FXO.js?v=04e7b679:56:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-53MOX5ZU.js?v=04e7b679:42:13
+    at https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-GYXSYF2D.js?v=04e7b679:258:22
+    at SelectPortal
+    at _c7 (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/src/components/ui/select.tsx:117:12)
+    at Provider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-SMK2KVIP.js?v=04e7b679:38:15)
+    at Provider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-SMK2KVIP.js?v=04e7b679:38:15)
+    at CollectionProvider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-LRJ6WIKL.js?v=04e7b679:29:13)
+    at Provider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-SMK2KVIP.js?v=04e7b679:38:15)
+    at Provider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-SMK2KVIP.js?v=04e7b679:38:15)
+    at Popper (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-MELR42GN.js?v=04e7b679:1919:11)
+    at Select (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-select.js?v=04e7b679:92:5)
+    at div
+    at div
+    at div
+    at _c9 (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/src/components/ui/card.tsx:106:12)
+    at div
+    at _c (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/src/components/ui/card.tsx:20:11)
+    at div
+    at div
+    at PublicFeedPage (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/src/pages/public-feed.tsx:51:21)
+    at Route (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=04e7b679:323:16)
+    at Switch (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=04e7b679:379:17)
+    at div
+    at Router
+    at Provider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-SMK2KVIP.js?v=04e7b679:38:15)
+    at TooltipProvider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=04e7b679:59:5)
+    at ThemeProvider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/src/components/theme-provider.tsx:25:3)
+    at QueryClientProvider (https://a616e456-9372-4b85-923f-590e1c99a8cd-00-248ey0lugfrkl.worf.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=04e7b679:2805:3)
+    at App
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+logCapturedError @ react-dom.development.js:18704
+update.callback @ react-dom.development.js:18737
+callCallback @ react-dom.development.js:15036
+commitUpdateQueue @ react-dom.development.js:15057
+commitLayoutEffectOnFiber @ react-dom.development.js:23430
+commitLayoutMountEffects_complete @ react-dom.development.js:24727
+commitLayoutEffects_begin @ react-dom.development.js:24713
+commitLayoutEffects @ react-dom.development.js:24651
+commitRootImpl @ react-dom.development.js:26862
+commitRoot @ react-dom.development.js:26721
+performSyncWorkOnRoot @ react-dom.development.js:26156
+flushSyncCallbacks @ react-dom.development.js:12042
+(anonymous) @ react-dom.development.js:25690
+react-dom.development.js:12056  Uncaught Error: A <Select.Item /> must have a value prop that is not an empty string. This is because the Select value can be set to an empty string to clear the selection and show the placeholder.
+    at select.tsx:1241:13
+    at renderWithHooks (react-dom.development.js:15486:18)
+    at updateForwardRef (react-dom.development.js:19245:20)
+    at beginWork (react-dom.development.js:21675:16)
+    at beginWork$1 (react-dom.development.js:27465:14)
+    at performUnitOfWork (react-dom.development.js:26596:12)
+    at workLoopSync (react-dom.development.js:26505:5)
+    at renderRootSync (react-dom.development.js:26473:7)
+    at recoverFromConcurrentError (react-dom.development.js:25889:20)
+    at performSyncWorkOnRoot (react-dom.development.js:26135:20)
+(anonymous) @ select.tsx:1241
+renderWithHooks @ react-dom.development.js:15486
+updateForwardRef @ react-dom.development.js:19245
+beginWork @ react-dom.development.js:21675
+beginWork$1 @ react-dom.development.js:27465
+performUnitOfWork @ react-dom.development.js:26596
+workLoopSync @ react-dom.development.js:26505
+renderRootSync @ react-dom.development.js:26473
+recoverFromConcurrentError @ react-dom.development.js:25889
+performSyncWorkOnRoot @ react-dom.development.js:26135
+flushSyncCallbacks @ react-dom.development.js:12042
+(anonymous) @ react-dom.development.js:25690

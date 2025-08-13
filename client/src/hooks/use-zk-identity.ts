@@ -89,7 +89,7 @@ export function useZkIdentity() {
         })
       });
 
-      const data = await response.json();
+      const data = response;
       
       if (!data.success) {
         throw new Error(data.error || 'Failed to register ZK identity');
