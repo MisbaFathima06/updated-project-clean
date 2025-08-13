@@ -20,9 +20,9 @@ export const log = (message: string) => {
 };
 
 // WebSocket setup for development
-export const setupWebSocket = (server: any) => {
-  const WebSocket = require('ws');
-  const wss = new WebSocket.Server({ 
+export const setupWebSocket = async (server: any) => {
+  const { WebSocketServer } = await import('ws');
+  const wss = new WebSocketServer({ 
     server,
     path: '/ws'
   });

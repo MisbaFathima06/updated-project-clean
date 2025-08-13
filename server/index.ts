@@ -74,7 +74,7 @@ app.use((req, res, next) => {
     // Setup WebSocket if in development
     if (app.get("env") === "development") {
       const { setupWebSocket } = await import("./vite");
-      setupWebSocket(server);
+      await setupWebSocket(server);
     }
 
     // Global error handler
