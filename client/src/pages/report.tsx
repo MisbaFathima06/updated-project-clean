@@ -135,7 +135,7 @@ export default function ReportPage() {
       return {
         ...result,
         blockchainHash: complaintHash,
-        transactionHash: blockchainResult.transactionHash,
+        transactionHash: blockchainResult,
       };
     },
     onSuccess: (data) => {

@@ -73,11 +73,14 @@ export default function AdminPage() {
   // Update status mutation
   const updateStatusMutation = useMutation({
     mutationFn: async ({ complaintId, status }: { complaintId: string; status: string }) => {
-      const response = await apiRequest("PATCH", `/api/complaints/${complaintId}/status`, {
-        status,
-        updatedBy: "admin", // In real app, get from auth context
+      const response = await apiRequest(`/complaints/${complaintId}/status`, {
+        method: "PATCH",
+        body: JSON.stringify({
+          status,
+          updatedBy: "admin", // In real app, get from auth context
+        }),
       });
-      return await response.json();
+      return response;
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/complaints'] });
@@ -110,7 +113,7 @@ export default function AdminPage() {
   const exportData = () => {
     const csvContent = [
       ['Reference ID', 'Topic', 'Status', 'Priority', 'Submitted', 'Upvotes'].join(','),
-      ...complaints.map(c => [
+      ...complaints.map((c: any) => [
         c.referenceId,
         c.topic,
         c.status,
@@ -261,7 +264,7 @@ export default function AdminPage() {
                   <SelectValue placeholder="All Status" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Status</SelectItem>
+                  <SelectItem value="all">All Status</SelectItem>
                   <SelectItem value="pending">Pending</SelectItem>
                   <SelectItem value="review">Under Review</SelectItem>
                   <SelectItem value="progress">In Progress</SelectItem>
@@ -277,7 +280,7 @@ export default function AdminPage() {
                   <SelectValue placeholder="All Priority" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Priority</SelectItem>
+                  <SelectItem value="all">All Priority</SelectItem>
                   <SelectItem value="urgent">Urgent</SelectItem>
                   <SelectItem value="high">High</SelectItem>
                   <SelectItem value="medium">Medium</SelectItem>
@@ -322,11 +325,11 @@ export default function AdminPage() {
                     ))
                   ) : (
                     complaints
-                      .filter(complaint => 
+                      .filter((complaint: any) => 
                         !filters.search || 
                         complaint.referenceId.toLowerCase().includes(filters.search.toLowerCase())
                       )
-                      .map((complaint) => (
+                      .map((complaint: any) => (
                         <TableRow key={complaint.id}>
                           <TableCell>
                             <div className="flex items-center space-x-2">
