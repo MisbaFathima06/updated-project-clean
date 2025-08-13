@@ -1,0 +1,67 @@
+
+> rest-express@1.0.0 dev
+> cross-env NODE_ENV=development tsx server/index.ts
+
+⚠️ No DATABASE_URL found, using mock database
+✅ Database connection established
+✅ IPFS service initialized
+✅ Blockchain service initialized
+✅ All routes registered successfully
+🔌 WebSocket server ready on /ws
+06:28:28 AM [express] 🚀 SpeakSecure server running on port 5000
+06:28:28 AM [express] 📡 API endpoints available at http://localhost:5000/api
+06:28:28 AM [express] 🔌 WebSocket server available at ws://localhost:5000/ws
+06:28:28 AM [express] 🔐 Zero-Knowledge Identity service: ACTIVE
+06:28:28 AM [express] 🔒 Encryption service: ACTIVE
+06:28:28 AM [express] 📁 IPFS storage service: FALLBACK
+06:28:28 AM [express] ⛓️  Blockchain service: FALLBACK
+06:28:28 AM [express] 🚨 Emergency service: ACTIVE
+06:28:28 AM [express] 🌐 Multi-language support: ACTIVE
+Error:   Failed to scan for dependencies from entries:
+  /home/runner/workspace/client/index.html
+
+  ✘ [ERROR] No matching export in "client/src/lib/i18n.ts" for import "t"
+
+    client/src/components/header.tsx:7:9:
+      7 │ import { t, getCurrentLanguage, setLanguage } from '@/lib/i18n';
+        ╵          ^
+
+
+✘ [ERROR] No matching export in "client/src/lib/i18n.ts" for import "getCurrentLanguage"
+
+    client/src/components/header.tsx:7:12:
+      7 │ import { t, getCurrentLanguage, setLanguage } from '@/lib/i18n';
+        ╵             ~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] No matching export in "client/src/lib/i18n.ts" for import "setLanguage"
+
+    client/src/components/header.tsx:7:32:
+      7 │ import { t, getCurrentLanguage, setLanguage } from '@/lib/i18n';
+        ╵                                 ~~~~~~~~~~~
+
+
+✘ [ERROR] No matching export in "client/src/lib/i18n.ts" for import "translations"
+
+    client/src/main.tsx:6:9:
+      6 │ import { translations } from "./lib/i18n";
+        ╵          ~~~~~~~~~~~~
+
+
+✘ [ERROR] No matching export in "client/src/lib/i18n.ts" for import "t"
+
+    client/src/pages/home.tsx:5:9:
+      5 │ import { t } from "@/lib/i18n";
+        ╵          ^
+
+
+    at failureErrorWithLog (/home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:1472:15)
+    at /home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:945:25
+    at runOnEndCallbacks (/home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:1315:45)
+    at buildResponseToResult (/home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:943:7)
+    at /home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:955:9
+    at new Promise (<anonymous>)
+    at requestCallbacks.on-end (/home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:954:54)
+    at handleRequest (/home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:647:17)
+    at handleIncomingPacket (/home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:672:7)
+    at Socket.readFromStdout (/home/runner/workspace/node_modules/vite/node_modules/esbuild/lib/main.js:600:7)
