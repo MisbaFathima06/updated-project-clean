@@ -8,6 +8,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { useEmergency } from "@/hooks/use-emergency";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
+import { useZKIdentity } from '@/hooks/use-zk-identity';
+import { apiRequest } from '@/lib/queryClient';
+import { generateZKIdentity } from '@/lib/zk-identity';
 
 export default function EmergencyModal() {
   const { isEmergencyModalOpen, closeEmergencyModal } = useEmergency();
@@ -17,6 +20,8 @@ export default function EmergencyModal() {
   const [contactNumber, setContactNumber] = useState("");
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
+  const { identity } = useZKIdentity();
+
 
   const handleSendAlert = async () => {
     if (!contactNumber.trim()) {
@@ -43,15 +48,37 @@ export default function EmergencyModal() {
         });
       }
 
+      // Ensure we have a valid ZK identity
+      let zkIdentity = identity;
+      if (!zkIdentity) {
+        zkIdentity = generateZKIdentity();
+
+        // Register the identity
+        await apiRequest('/api/zk/identity', {
+          method: 'POST',
+          body: JSON.stringify({
+            commitment: zkIdentity.commitment,
+            nullifierHash: zkIdentity.nullifierHash,
+            groupId: 'speaksecure-v1'
+          })
+        });
+      }
+
+      const alertData = {
+        content: description || "Emergency alert sent from SpeakSecure platform",
+        emergencyContact: contactNumber,
+        location: location ? {
+          latitude: location.latitude,
+          longitude: location.longitude
+        } : undefined,
+        zkCommitment: zkIdentity.commitment,
+        priority: 'critical' as const
+      };
+
       const response = await fetch("/api/emergency", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          complaintId: null, // Can be set if emergency is related to existing complaint
-          contactNumbers: [contactNumber],
-          location,
-          message: description || "Emergency alert sent from SpeakSecure platform",
-        }),
+        body: JSON.stringify(alertData),
       });
 
       if (response.ok) {

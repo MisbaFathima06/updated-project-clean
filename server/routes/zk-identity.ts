@@ -87,13 +87,17 @@ router.post('/generate-proof', async (req, res) => {
 
     const { action, data, commitment, nullifier } = validationResult.data;
 
-    // Verify identity exists
-    const identity = await storage.getZkIdentityByCommitment(commitment);
+    // Verify identity exists or create if needed
+    let identity = await storage.getZkIdentityByCommitment(commitment);
     if (!identity) {
-      return res.status(400).json({
-        success: false,
-        error: 'Invalid commitment'
+      // Auto-create identity if it doesn't exist
+      const newIdentity = await storage.createZkIdentity({
+        commitment,
+        nullifierHash: nullifier,
+        groupId: 'speaksecure-v1'
       });
+      identity = newIdentity;
+      console.log('✅ Auto-created ZK Identity:', commitment.substring(0, 8) + '...');
     }
 
     // Generate proof

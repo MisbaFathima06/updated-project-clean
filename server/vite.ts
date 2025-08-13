@@ -8,16 +8,39 @@ import { nanoid } from "nanoid";
 
 const viteLogger = createLogger();
 
-export function log(message: string, source = "express") {
+export const log = (message: string) => {
   const formattedTime = new Date().toLocaleTimeString("en-US", {
-    hour: "numeric",
+    hour: "2-digit",
     minute: "2-digit",
     second: "2-digit",
     hour12: true,
   });
 
-  console.log(`${formattedTime} [${source}] ${message}`);
-}
+  console.log(`${formattedTime} [express] ${message}`);
+};
+
+// WebSocket setup for development
+export const setupWebSocket = (server: any) => {
+  const WebSocket = require('ws');
+  const wss = new WebSocket.Server({ 
+    server,
+    path: '/ws'
+  });
+
+  wss.on('connection', (ws: any) => {
+    console.log('WebSocket client connected');
+
+    ws.on('message', (message: string) => {
+      console.log('WebSocket message:', message);
+    });
+
+    ws.on('close', () => {
+      console.log('WebSocket client disconnected');
+    });
+  });
+
+  return wss;
+};
 
 export async function setupVite(app: Express, server: Server): Promise<void> {
   const serverOptions = {

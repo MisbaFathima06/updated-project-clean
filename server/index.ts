@@ -70,6 +70,12 @@ app.use((req, res, next) => {
 
     // Register API routes
     const server = await registerRoutes(app);
+    
+    // Setup WebSocket if in development
+    if (app.get("env") === "development") {
+      const { setupWebSocket } = await import("./vite");
+      setupWebSocket(server);
+    }
 
     // Global error handler
     app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
