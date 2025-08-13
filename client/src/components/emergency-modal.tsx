@@ -8,9 +8,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { useEmergency } from "@/hooks/use-emergency";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
-import { useZKIdentity } from '@/hooks/use-zk-identity';
+import { useZkIdentity } from '@/hooks/use-zk-identity';
 import { apiRequest } from '@/lib/queryClient';
-import { generateZKIdentity } from '@/lib/zk-identity';
+import { generateZkIdentity } from '@/lib/zk-identity';
 
 export default function EmergencyModal() {
   const { isEmergencyModalOpen, closeEmergencyModal } = useEmergency();
@@ -20,7 +20,7 @@ export default function EmergencyModal() {
   const [contactNumber, setContactNumber] = useState("");
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
-  const { identity } = useZKIdentity();
+  const { identity } = useZkIdentity();
 
 
   const handleSendAlert = async () => {
@@ -51,7 +51,7 @@ export default function EmergencyModal() {
       // Ensure we have a valid ZK identity
       let zkIdentity = identity;
       if (!zkIdentity) {
-        zkIdentity = generateZKIdentity();
+        zkIdentity = await generateZkIdentity();
 
         // Register the identity
         await apiRequest('/api/zk/identity', {
