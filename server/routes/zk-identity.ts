@@ -1,4 +1,3 @@
-
 import { Router } from 'express';
 import { z } from 'zod';
 import { zkIdentityService } from '../services/zk-identity.js';
@@ -102,7 +101,7 @@ router.post('/generate-proof', async (req, res) => {
 
     // Generate proof
     const proof = await zkIdentityService.generateProof(action, data);
-    
+
     // Generate action-specific nullifier
     const actionNullifierHash = await zkIdentityService.generateActionNullifierHash(
       nullifier, 
@@ -171,7 +170,7 @@ router.post('/verify-proof', async (req, res) => {
 router.post('/verify', async (req, res) => {
   try {
     const { commitment, nullifierHash, topic } = req.body;
-    
+
     // Verify commitment exists
     const identity = await storage.getZkIdentityByCommitment(commitment);
     if (!identity) {
@@ -200,67 +199,4 @@ router.post('/verify', async (req, res) => {
   }
 });
 
-});
-
-// Generate ZK proof for actions
-router.post('/generate-proof', async (req, res) => {
-  try {
-    const proofSchema = z.object({
-      action: z.string().min(1),
-      data: z.any().optional(),
-      commitment: z.string().min(1),
-      nullifier: z.string().min(1),
-      groupId: z.string().default('speaksecure-v1')
-    });
-
-    const validationResult = proofSchema.safeParse(req.body);
-    if (!validationResult.success) {
-      return res.status(400).json({
-        success: false,
-        error: 'Invalid proof data',
-        details: validationResult.error.errors
-      });
-    }
-
-    const { action, data, commitment, nullifier, groupId } = validationResult.data;
-
-    // Verify commitment exists
-    const identity = await storage.getZkIdentityByCommitment(commitment);
-    if (!identity) {
-      return res.status(400).json({
-        success: false,
-        error: 'Invalid commitment'
-      });
-    }
-
-    // Generate proof using ZK service
-    const proof = await zkIdentityService.generateProof(action, data);
-    
-    // Generate action-specific nullifier
-    const actionNullifierHash = await zkIdentityService.generateActionNullifierHash(nullifier, action, data?.topic || '');
-    
-    // Store nullifier to prevent double-spending
-    await storage.storeNullifier(actionNullifierHash, action, data?.topic || '');
-
-    console.log(`✅ ZK Proof generated for action: ${action}`);
-
-    res.json({
-      success: true,
-      proof: {
-        proof: proof.proof,
-        publicSignals: proof.publicSignals,
-        nullifierHash: actionNullifierHash,
-        timestamp: proof.timestamp
-      }
-    });
-
-  } catch (error) {
-    console.error('ZK proof generation failed:', error);
-    res.status(500).json({
-      success: false,
-      error: 'Failed to generate ZK proof'
-    });
-  }
-});
-
-export default routerouter;
+export default router;
