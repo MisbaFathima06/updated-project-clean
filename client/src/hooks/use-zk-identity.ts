@@ -63,17 +63,17 @@ export function useZkIdentity() {
     return '0x' + hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
   };
 
-  const generateZKIdentity = useCallback((): ZkIdentity => {
+  const generateZKIdentity = useCallback(async (): Promise<ZkIdentity> => {
     console.log('🔐 Generating Zero-Knowledge Identity...');
     const trapdoor = generateRandomField();
     const nullifier = generateRandomField();
     const groupId = 'speaksecure-v1';
-    const commitment = generateCommitment(trapdoor, nullifier); // Note: This should be awaited if generateCommitment is async, but the original code didn't await it here. Assuming it's synchronous for now based on the original structure.
-    const nullifierHash = generateNullifierHash(nullifier, groupId); // Same assumption as above.
+    const commitment = await generateCommitment(trapdoor, nullifier);
+    const nullifierHash = await generateNullifierHash(nullifier, groupId);
 
     const newIdentity: ZkIdentity = {
-      commitment: commitment as string, // Cast to string assuming it resolves correctly
-      nullifierHash: nullifierHash as string, // Cast to string assuming it resolves correctly
+      commitment,
+      nullifierHash,
       trapdoor,
       nullifier,
       groupId,
@@ -126,7 +126,7 @@ export function useZkIdentity() {
 
       // If no identity, create one
       if (!currentIdentity) {
-        currentIdentity = generateZKIdentity();
+        currentIdentity = await generateZKIdentity();
         setStoredIdentity(currentIdentity);
 
         // Register the identity with the backend
@@ -206,7 +206,7 @@ export function useZkIdentity() {
     setIsGenerating(true);
 
     try {
-      const newIdentity = generateZKIdentity();
+      const newIdentity = await generateZKIdentity();
       await registerIdentity.mutateAsync(newIdentity);
       return newIdentity;
     } catch (error) {
