@@ -83,8 +83,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     ws.on('message', (data) => {
       try {
         const message = JSON.parse(data.toString());
-        console.log('📨 WebSocket message received:', message.type);
-
+        
         // Reset heartbeat on any message
         isAlive = true;
 
@@ -114,17 +113,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
             }
         }
       } catch (error) {
-        console.error('WebSocket message error:', error);
-        try {
-          if (ws.readyState === WebSocket.OPEN) {
+        // Silently handle message parsing errors to reduce console noise
+        if (ws.readyState === WebSocket.OPEN) {
+          try {
             ws.send(JSON.stringify({
               type: 'error',
               message: 'Invalid message format',
               timestamp: Date.now()
             }));
+          } catch (sendError) {
+            // Connection likely closed, ignore
           }
-        } catch (sendError) {
-          console.error('Failed to send error message:', sendError);
         }
       }
     });

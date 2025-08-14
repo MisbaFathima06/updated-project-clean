@@ -23,7 +23,7 @@ export const log = (message: string) => {
 export const setupWebSocket = async (server: any) => {
   try {
     const { WebSocketServer } = await import('ws');
-    const wss = new WebSocketServer({ 
+    const wss = new WebSocketServer({
       server,
       path: '/ws',
       perMessageDeflate: false,
@@ -75,48 +75,28 @@ export const setupWebSocket = async (server: any) => {
 };
 
 export async function setupVite(app: Express, server: Server): Promise<void> {
-  const serverOptions = {
-    middlewareMode: true,
-    hmr: { server },
-    allowedHosts: true as const,
-  };
-
-  const vite = await createViteServer({
-    ...viteConfig,
-    configFile: false,
-    customLogger: {
-      ...viteLogger,
-      error: (msg, options) => {
-        viteLogger.error(msg, options);
-        process.exit(1);
-      },
+  const vite = await import("vite");
+  const viteDevServer = await vite.createServer({
+    server: {
+      middlewareMode: true,
+      host: "0.0.0.0",
+      port: 5173,
+      hmr: {
+        port: 5173,
+        host: "0.0.0.0"
+      }
     },
-    server: serverOptions,
-    appType: "custom",
-  });
-
-  app.use(vite.middlewares);
-  app.use("*", async (req, res, next) => {
-    const url = req.originalUrl;
-
-    try {
-      const clientTemplate = path.resolve(
-        import.meta.dirname,
-        "..",
-        "client",
-        "index.html",
-      );
-
-      // always reload the index.html file from disk incase it changes
-      let template = await fs.promises.readFile(clientTemplate, "utf-8");
-      template = await vite.transformIndexHtml(url, template);
-      const page = await vite.transformIndexHtml(url, template);
-      res.status(200).set({ "Content-Type": "text/html" }).end(page);
-    } catch (e) {
-      vite.ssrFixStacktrace(e as Error);
-      next(e);
+    appType: "spa",
+    optimizeDeps: {
+      exclude: ["fsevents"]
+    },
+    define: {
+      global: 'globalThis',
     }
   });
+
+  app.use(viteDevServer.ssrFixStacktrace);
+  app.use(viteDevServer.middlewares);
 }
 
 export function serveStatic(app: Express) {

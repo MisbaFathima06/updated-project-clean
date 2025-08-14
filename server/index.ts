@@ -112,28 +112,55 @@ app.use((req, res, next) => {
 
     // Setup Vite in development or serve static files in production
     if (app.get("env") === "development") {
-      // Setup Vite middleware
-      await setupVite(app, server);
+      try {
+        // Setup Vite middleware
+        await setupVite(app, server);
+        log('✅ Vite development server initialized');
+      } catch (error) {
+        console.error('❌ Failed to setup Vite, falling back to static serving:', error);
+        serveStatic(app);
+      }
     } else {
       serveStatic(app);
     }
 
+    // Catch-all handler for SPA routing
+    app.get('*', (req, res, next) => {
+      if (req.path.startsWith('/api')) {
+        return next();
+      }
+      // Serve index.html for all non-API routes
+      if (app.get("env") === "development") {
+        return next();
+      } else {
+        res.sendFile('index.html', { root: resolve(process.cwd(), 'dist') });
+      }
+    });
+
     // Start server
     const port = parseInt(process.env.PORT || '5000', 10);
-    server.listen({
-      port,
-      host: "0.0.0.0",
-      reusePort: true,
-    }, () => {
+    
+    server.on('error', (error: any) => {
+      if (error.code === 'EADDRINUSE') {
+        console.error(`❌ Port ${port} is already in use`);
+        process.exit(1);
+      } else {
+        console.error('❌ Server error:', error);
+        process.exit(1);
+      }
+    });
+
+    server.listen(port, "0.0.0.0", () => {
       log(`🚀 SpeakSecure server running on port ${port}`);
-      log(`📡 API endpoints available at http://localhost:${port}/api`);
-      log(`🔌 WebSocket server available at ws://localhost:${port}/ws`);
+      log(`📡 API endpoints available at http://0.0.0.0:${port}/api`);
+      log(`🔌 WebSocket server available at ws://0.0.0.0:${port}/ws`);
       log(`🔐 Zero-Knowledge Identity service: ACTIVE`);
       log(`🔒 Encryption service: ACTIVE`);
       log(`📁 IPFS storage service: ${process.env.IPFS_API_URL ? 'CONNECTED' : 'FALLBACK'}`);
       log(`⛓️  Blockchain service: ${process.env.BLOCKCHAIN_RPC_URL ? 'CONNECTED' : 'FALLBACK'}`);
       log(`🚨 Emergency service: ACTIVE`);
       log(`🌐 Multi-language support: ACTIVE`);
+      log(`✅ Application ready and serving frontend`);
     });
 
   } catch (error) {
