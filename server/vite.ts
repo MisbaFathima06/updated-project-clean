@@ -21,25 +21,57 @@ export const log = (message: string) => {
 
 // WebSocket setup for development
 export const setupWebSocket = async (server: any) => {
-  const { WebSocketServer } = await import('ws');
-  const wss = new WebSocketServer({ 
-    server,
-    path: '/ws'
-  });
-
-  wss.on('connection', (ws: any) => {
-    console.log('WebSocket client connected');
-
-    ws.on('message', (message: string) => {
-      console.log('WebSocket message:', message);
+  try {
+    const { WebSocketServer } = await import('ws');
+    const wss = new WebSocketServer({ 
+      server,
+      path: '/ws',
+      perMessageDeflate: false,
+      clientTracking: true
     });
 
-    ws.on('close', () => {
-      console.log('WebSocket client disconnected');
-    });
-  });
+    wss.on('connection', (ws: any, req: any) => {
+      console.log('WebSocket client connected from:', req.socket.remoteAddress);
 
-  return wss;
+      // Send ping every 30 seconds to keep connection alive
+      const pingInterval = setInterval(() => {
+        if (ws.readyState === 1) { // OPEN
+          ws.ping();
+        }
+      }, 30000);
+
+      ws.on('message', (message: string) => {
+        try {
+          console.log('WebSocket message:', message.toString());
+        } catch (error) {
+          console.error('WebSocket message error:', error);
+        }
+      });
+
+      ws.on('pong', () => {
+        console.log('WebSocket pong received');
+      });
+
+      ws.on('error', (error: any) => {
+        console.error('WebSocket error:', error);
+        clearInterval(pingInterval);
+      });
+
+      ws.on('close', (code: number, reason: string) => {
+        console.log('WebSocket client disconnected:', code, reason.toString());
+        clearInterval(pingInterval);
+      });
+    });
+
+    wss.on('error', (error: any) => {
+      console.error('WebSocket server error:', error);
+    });
+
+    return wss;
+  } catch (error) {
+    console.error('Failed to setup WebSocket server:', error);
+    return null;
+  }
 };
 
 export async function setupVite(app: Express, server: Server): Promise<void> {

@@ -55,16 +55,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
     path: '/ws'
   });
 
-  // WebSocket connection handling
+  // WebSocket connection handling with better error management
   wss.on('connection', (ws: WebSocket, req) => {
-    console.log('🔌 WebSocket client connected');
+    console.log('🔌 WebSocket client connected from:', req.socket.remoteAddress);
 
-    // Send welcome message
-    ws.send(JSON.stringify({
-      type: 'welcome',
-      message: 'Connected to SpeakSecure real-time service',
-      timestamp: Date.now()
-    }));
+    // Set up heartbeat
+    let isAlive = true;
+    const heartbeat = () => { isAlive = true; };
+    
+    ws.on('pong', heartbeat);
+
+    // Send welcome message safely
+    try {
+      ws.send(JSON.stringify({
+        type: 'welcome',
+        message: 'Connected to SpeakSecure real-time service',
+        timestamp: Date.now()
+      }));
+    } catch (error) {
+      console.error('Failed to send welcome message:', error);
+    }
 
     // Handle client messages
     ws.on('message', (data) => {
@@ -72,44 +82,79 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const message = JSON.parse(data.toString());
         console.log('📨 WebSocket message received:', message.type);
 
+        // Reset heartbeat on any message
+        isAlive = true;
+
         // Handle different message types
         switch (message.type) {
           case 'ping':
-            ws.send(JSON.stringify({ type: 'pong', timestamp: Date.now() }));
+            if (ws.readyState === WebSocket.OPEN) {
+              ws.send(JSON.stringify({ type: 'pong', timestamp: Date.now() }));
+            }
             break;
           case 'subscribe':
-            // Handle subscription to updates
-            ws.send(JSON.stringify({
-              type: 'subscribed',
-              channel: message.channel,
-              timestamp: Date.now()
-            }));
+            if (ws.readyState === WebSocket.OPEN) {
+              ws.send(JSON.stringify({
+                type: 'subscribed',
+                channel: message.channel,
+                timestamp: Date.now()
+              }));
+            }
             break;
           default:
-            ws.send(JSON.stringify({
-              type: 'error',
-              message: 'Unknown message type',
-              timestamp: Date.now()
-            }));
+            if (ws.readyState === WebSocket.OPEN) {
+              ws.send(JSON.stringify({
+                type: 'error',
+                message: 'Unknown message type',
+                timestamp: Date.now()
+              }));
+            }
         }
       } catch (error) {
         console.error('WebSocket message error:', error);
-        ws.send(JSON.stringify({
-          type: 'error',
-          message: 'Invalid message format',
-          timestamp: Date.now()
-        }));
+        try {
+          if (ws.readyState === WebSocket.OPEN) {
+            ws.send(JSON.stringify({
+              type: 'error',
+              message: 'Invalid message format',
+              timestamp: Date.now()
+            }));
+          }
+        } catch (sendError) {
+          console.error('Failed to send error message:', sendError);
+        }
       }
     });
 
     // Handle client disconnect
-    ws.on('close', () => {
-      console.log('🔌 WebSocket client disconnected');
+    ws.on('close', (code, reason) => {
+      console.log('🔌 WebSocket client disconnected:', code, reason.toString());
+      isAlive = false;
     });
 
     // Handle errors
     ws.on('error', (error) => {
       console.error('WebSocket error:', error);
+      isAlive = false;
+    });
+
+    // Set up heartbeat interval for this connection
+    const pingInterval = setInterval(() => {
+      if (!isAlive) {
+        console.log('🔌 WebSocket connection terminated due to no heartbeat');
+        clearInterval(pingInterval);
+        return ws.terminate();
+      }
+      
+      isAlive = false;
+      if (ws.readyState === WebSocket.OPEN) {
+        ws.ping();
+      }
+    }, 30000);
+
+    // Clean up interval when connection closes
+    ws.on('close', () => {
+      clearInterval(pingInterval);
     });
   });
 

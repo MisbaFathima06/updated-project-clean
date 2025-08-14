@@ -73,8 +73,17 @@ app.use((req, res, next) => {
     
     // Setup WebSocket if in development
     if (app.get("env") === "development") {
-      const { setupWebSocket } = await import("./vite");
-      await setupWebSocket(server);
+      try {
+        const { setupWebSocket } = await import("./vite");
+        const wsServer = await setupWebSocket(server);
+        if (wsServer) {
+          console.log('✅ Development WebSocket server initialized');
+        } else {
+          console.log('⚠️ Development WebSocket server failed to initialize (non-critical)');
+        }
+      } catch (error) {
+        console.warn('⚠️ Development WebSocket setup failed (non-critical):', error.message);
+      }
     }
 
     // Global error handler
